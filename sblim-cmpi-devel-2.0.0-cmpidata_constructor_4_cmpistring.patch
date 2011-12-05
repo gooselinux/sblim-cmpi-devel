@@ -1,0 +1,13 @@
+--- sblim-cmpi-devel-2.0.0/CmpiImpl.cpp	2009-07-01 20:22:03.000000000 +0530
++++ sblim-cmpi-devel-2.0.0_new/CmpiImpl.cpp	2009-07-01 20:22:03.000000000 +0530
+@@ -894,8 +894,8 @@
+ 
+ CmpiData::CmpiData(const CmpiString& d) {
+    _data.state=CMPI_goodValue;
+-   _data.value.chars=(char*)d.charPtr();
+-   _data.type=CMPI_chars;
++   _data.value.string=d.getEnc();
++   _data.type=CMPI_string;
+ }
+ 
+ CmpiData::CmpiData(const char* d) {
